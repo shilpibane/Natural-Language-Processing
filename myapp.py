@@ -22,12 +22,12 @@ def predict():
     
     str1= str(model.predict(x))
     if str1=='[1]':
-        return ('<h1>' + request.form['Name']+" liked the restaurant" + '</h1>')
+        return ('<h1>' + request.form['Name']+'!'+'<br>'+ "Thank You for liking our restaurant." + '</h1>')
     else:
-        return('<h1>' + request.form['Name']+" Not liked the restaurant" + '</h1>')
+        return('<h1>' + request.form['Name']+'!'+'<br>'+"We apologize that our service did not satisfy your expectations." + '</h1>')
      
  
     
 
 if __name__ =='__main__':
-    app.run()
+    app.run(debug=True)
