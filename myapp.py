@@ -14,13 +14,14 @@ def predict():
     
     text = request.form['Feedback']
     return text
-    '''
+    
     cv = pickle.load(open('cv.pkl','rb'))
     
     x = cv.transform([text])
     
     x = x.toarray()
-    
+    return str(x)
+    '''
     str1= str(model.predict(x))
     return str1
     
