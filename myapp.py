@@ -24,9 +24,11 @@ def predict():
     str1= str(model.predict(x))
    
     if str1=='[1]':
-        return ('<h1>' + request.form['Name']+'!'+'<br>'+ "Thank You for liking our restaurant." + '</h1>')
+        return 'happy'
+        #return ('<h1>' + request.form['Name']+'!'+'<br>'+ "Thank You for liking our restaurant." + '</h1>')
     else:
-        return('<h1>' + request.form['Name']+'!'+'<br>'+"We apologize that our service did not satisfy your expectations." + '</h1>')
+        return 'not happy'
+        #return('<h1>' + request.form['Name']+'!'+'<br>'+"We apologize that our service did not satisfy your expectations." + '</h1>')
 
  
     
