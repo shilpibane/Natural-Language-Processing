@@ -9,14 +9,15 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    PS = PorterStemmer()
+
+    model = pickle.load(open('model.pkl','rb'))
+    
     text = request.form['Feedback']
-    model = pickle.load(open('model.pkl','rb'))   
+    
     cv = pickle.load(open('cv.pkl','rb'))
-    msg = re.sub('[^a-zA-Z]',' ',text).lower().split()
-    msg = [PS.stem(word) for word in msg if not word in stopwords.words('english')]
-    msg = ' '.join(msg)
-    x = cv.transform([msg])
+    
+    x = cv.transform([text])
+    
     x = x.toarray()
     
     str1= str(model.predict(x))
