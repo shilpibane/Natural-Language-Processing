@@ -21,9 +21,9 @@ def predict():
     x = x.toarray()
     #return str(x)
     
-    str1= str(model.predict(x))
+    op = model.predict(x)[0]
    
-    if str1=='[1]':
+    if op==1:
         return 'happy'
         #return ('<h1>' + request.form['Name']+'!'+'<br>'+ "Thank You for liking our restaurant." + '</h1>')
     else:
