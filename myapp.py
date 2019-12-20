@@ -13,7 +13,8 @@ def predict():
     model = pickle.load(open('model.pkl','rb'))
     
     text = request.form['Feedback']
-    
+    return text
+    '''
     cv = pickle.load(open('cv.pkl','rb'))
     
     x = cv.transform([text])
@@ -22,7 +23,7 @@ def predict():
     
     str1= str(model.predict(x))
     return str1
-    '''
+    
     if str1=='[1]':
         return ('<h1>' + request.form['Name']+'!'+'<br>'+ "Thank You for liking our restaurant." + '</h1>')
     else:
