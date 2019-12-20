@@ -21,11 +21,13 @@ def predict():
     x = x.toarray()
     
     str1= str(model.predict(x))
+    return str1
+    '''
     if str1=='[1]':
         return ('<h1>' + request.form['Name']+'!'+'<br>'+ "Thank You for liking our restaurant." + '</h1>')
     else:
         return('<h1>' + request.form['Name']+'!'+'<br>'+"We apologize that our service did not satisfy your expectations." + '</h1>')
-     
+    '''
  
     
 
