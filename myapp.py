@@ -13,7 +13,6 @@ def predict():
     model = pickle.load(open('model.pkl','rb'))
     
     text = request.form['Feedback']
-    return text
     
     cv = pickle.load(open('cv.pkl','rb'))
     
